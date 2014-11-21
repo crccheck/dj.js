@@ -30,8 +30,10 @@ function walk(node)
 }
 
 function handleText(textNode) {
-  // ['author', 'doctor', 'expert', 'farmer', 'mayor', 'president', 'scientist', 'senator', 'veteran'].map(function (x) { return '[' + x[0].toUpperCase() + x[0].toLowerCase() + ']' + x.substr(1); }).join('|')
+  // ['author', 'doctor', 'expert', 'farmer', 'lawyer', 'mayor', 'president', 'scientist', 'senator', 'veteran'].map(function (x) { return '[' + x[0].toUpperCase() + x[0].toLowerCase() + ']' + x.substr(1); }).join('|')
+  // Case sensitive
+  // ['Pope'].join('|')
   var v = textNode.nodeValue;
-  v = v.replace(/\b([Aa]uthor|[Dd]octor|[Ee]xpert|[Ff]armer|[Mm]ayor|[Pp]resident|[Ss]cientist|[Ss]enator|[Vv]eteran)(s)?\b/, "DJ$2");
+  v = v.replace(/\b([Aa]uthor|[Dd]octor|[Ee]xpert|[Ff]armer|[Ll]awyer|[Mm]ayor|[Pp]resident|[Ss]cientist|[Ss]enator|[Vv]eteran|Pope)(s)?\b/, "DJ$2");
   textNode.nodeValue = v;
 }
